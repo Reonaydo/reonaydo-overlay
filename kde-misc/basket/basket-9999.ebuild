@@ -4,7 +4,7 @@
 
 EAPI="2"
 
-inherit git kde4-base
+inherit kde4-base git 
 
 DESCRIPTION="A DropDrawers clone. Multiple information organizer"
 HOMEPAGE="http://basket.kde.org/"
@@ -16,7 +16,6 @@ SLOT="4"
 
 IUSE="debug crypt"
 
-#PATCHES=( "${FILESDIR}/${P}-crypt.patch" )
 
 src_unpack() {
 	git_src_unpack
