@@ -42,5 +42,5 @@ src_install() {
 	dosym /usr/share/icons /opt/dropbox-daemon/icons
 	make_desktop_entry dropbox "Dropbox Daemon" dropboxstatus-logo
 	insinto /etc/xdg/autostart
-	doins /usr/share/applications/dropbox-dropbox.desktop
+	#doins /usr/share/applications/dropbox-dropbox.desktop
 }
