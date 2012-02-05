@@ -15,6 +15,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 
+IUSE=""
+
 DEPEND="
 	x11-libs/qt-gui:4
 	x11-libs/qt-svg:4"
