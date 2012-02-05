@@ -20,19 +20,19 @@ SLOT="0"
 KEYWORDS=""
 IUSE="kde qt4 gtk"
 
-REQUIRED_USE="^^ ( qt4 gtk )" 
+REQUIRED_USE="^^ ( qt4 gtk )"
 
 RDEPEND="
 	qt4? ( x11-libs/qt-core x11-libs/qt-webkit x11-libs/qt-sql x11-libs/qt-gui )
 	kde? ( kde-base/kdelibs:4 )
-	gtk? ( 
+	gtk? (
 		>=dev-python/pywebkitgtk-1.1.8 dev-python/notify-python
 		dev-python/python-distutils-extra dev-libs/keybinder[python]
 	)"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-    if use qt4; then
+	if use qt4; then
 		sed 's/hotot-qt/hotot/g' -i CMakeLists.txt|| die
 		sed 's/hotot-qt/hotot/g' -i qt/src/mainwindow.cpp || die
 		sed 's/hotot-qt/hotot/g' -i qt/src/CMakeLists.txt || die
@@ -46,14 +46,13 @@ src_prepare() {
 		mv qt/po/hotot-qt.pot qt/po/hotot.pot || die
 	else
 		python_src_prepare
-    fi
+	fi
 }
-
 
 src_configure() {
 	if use qt4; then
-		local mycmakeargs=( 
-			$(cmake-utils_use_want kde WITH_KDE) 
+		local mycmakeargs=(
+			$(cmake-utils_use_want kde WITH_KDE)
 		)
 		cmake-utils_src_configure
 	else
@@ -62,17 +61,17 @@ src_configure() {
 }
 
 src_compile() {
-	 if use qt4; then
-        cmake-utils_src_compile
-    else
-        python_src_compile
-    fi
+	if use qt4; then
+		cmake-utils_src_compile
+	else
+		python_src_compile
+	fi
 }
 
 src_install() {
-	 if use qt4; then
-        cmake-utils_src_install
-    else
-        python_src_install
-    fi
+	if use qt4; then
+		cmake-utils_src_install
+	else
+		python_src_install
+	fi
 }
