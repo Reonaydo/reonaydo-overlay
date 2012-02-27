@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-inherit qt4-r2 git-2
+inherit cmake-utils git-2
 
 DESCRIPTION="Lightweight and cross-platform clipboard history applet"
 HOMEPAGE="http://code.google.com/p/qlipper/"
@@ -21,7 +21,3 @@ DEPEND="
 	x11-libs/qt-gui:4
 	x11-libs/qt-svg:4"
 RDEPEND="${DEPEND}"
-
-src_configure() {
-	eqmake4 INSTALL_PREFIX=/usr
-}
