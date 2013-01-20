@@ -13,7 +13,7 @@ inherit cmake-utils git-2
 DESCRIPTION="lightweight & open source microblogging client"
 HOMEPAGE="http://hotot.org"
 SRC_URI=""
-EGIT_REPO_URI="git://github.com/shellex/Hotot.git"
+EGIT_REPO_URI="git://github.com/lyricat/Hotot.git"
 
 LICENSE="LGPL-3"
 SLOT="0"
