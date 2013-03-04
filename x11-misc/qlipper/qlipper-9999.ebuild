@@ -18,6 +18,6 @@ KEYWORDS=""
 IUSE=""
 
 DEPEND="
-	x11-libs/qt-gui:4
-	x11-libs/qt-svg:4"
+	dev-qt/qtgui:4
+	dev-qt/qtsvg:4"
 RDEPEND="${DEPEND}"

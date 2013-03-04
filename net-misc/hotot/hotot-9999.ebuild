@@ -23,7 +23,7 @@ IUSE="kde qt4 gtk gtk3"
 REQUIRED_USE="^^ ( qt4 gtk )"
 
 RDEPEND="
-	qt4? ( >x11-libs/qt-core-4.7 x11-libs/qt-webkit x11-libs/qt-sql x11-libs/qt-gui )
+	qt4? ( >dev-qt/qtcore-4.7 dev-qt/qtwebkit dev-qt/qtsql dev-qt/qtgui )
 	kde? ( kde-base/kdelibs:4 )
 	gtk? (
 		>=dev-python/pywebkitgtk-1.1.8 dev-python/notify-python
