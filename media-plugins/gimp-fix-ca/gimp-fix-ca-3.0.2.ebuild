@@ -22,6 +22,7 @@ src_unpack() {
 }
 
 src_compile() {
+	export LDFLAGS="${LDFLAGS} -lm"
 	gimptool-2.0 --build fix-ca.c
 }
 
