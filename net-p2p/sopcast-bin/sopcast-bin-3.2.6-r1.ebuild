@@ -20,7 +20,7 @@ IUSE=""
 QA_PRESTRIPPED="opt/${PN}/${PN}"
 
 # All dependencies might not be listed, since the binary blob's homepage only lists libstdc++
-RDEPEND="amd64? ( app-emulation/emul-linux-x86-compat )
+RDEPEND=">=sys-libs/glibc-2.19-r1
 	x86? ( >=virtual/libstdc++-3.3 )"
 
 DEPEND="${RDEPEND}"
