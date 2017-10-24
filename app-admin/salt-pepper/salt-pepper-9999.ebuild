@@ -13,7 +13,7 @@ HOMEPAGE="http://saltstack.org/"
 if [[ ${PV} == 9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="git://github.com/saltstack/pepper.git"
-	EGIT_BRANCH="master"
+	EGIT_BRANCH="develop"
 	SRC_URI=""
 	KEYWORDS=""
 else
