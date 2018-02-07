@@ -11,7 +11,7 @@ MY_P="sp-auth"
 DESCRIPTION="SopCast free P2P Internet TV binary"
 LICENSE="SopCast-unknown-license"
 HOMEPAGE="http://www.sopcast.com/"
-SRC_URI="http://sopcast-player.googlecode.com/files/${MY_P}-${PV}.tar.gz"
+SRC_URI="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/sopcast-player/${MY_P}-${PV}.tar.gz"
 
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
