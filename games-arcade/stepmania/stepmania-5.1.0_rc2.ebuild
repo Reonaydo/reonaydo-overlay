@@ -51,9 +51,9 @@ DEPEND="${RDEPEND}
 
 src_unpack() {
 	default
-#	if use ffmpeg; then
-#		mv "${WORKDIR}/ffmpeg-${FFMPEG_VER}" "${S}/extern/ffmpeg-linux-${FFMPEG_VER}" || die
-#	fi
+	if use ffmpeg; then
+		mv "${WORKDIR}/ffmpeg-${FFMPEG_VER}" "${S}/extern/ffmpeg-linux-${FFMPEG_VER}" || die
+	fi
 }
 
 src_prepare() {
