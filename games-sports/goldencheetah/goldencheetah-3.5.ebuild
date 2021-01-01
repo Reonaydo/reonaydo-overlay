@@ -1,13 +1,12 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
 inherit qmake-utils
-inherit versionator
 
 MY_PN="GoldenCheetah"
-MY_PV=$(replace_version_separator 2 '-DEV')
+MY_PV=$(ver_rs 2 '-DEV')
 MY_P="${MY_PN}-${MY_PV}"
 
 
