@@ -73,6 +73,9 @@ src_prepare() {
 	sed -i "s:DEFINES += GC_VIDEO_NONE:#DEFINES += GC_VIDEO_NONE:"  src/gcconfig.pri || die
 	sed -i "s:#DEFINES += GC_VIDEO_VLC:DEFINES += GC_VIDEO_VLC:"    src/gcconfig.pri || die
 
+	echo 'DEFINES += GC_STRAVA_CLIENT_ID=\\\"45487\\\"' >> src/gcconfig.pri || die
+	echo 'DEFINES += GC_STRAVA_CLIENT_SECRET=\\\"6c3a38d6d1a532d752503c0ce69166f159e73dd2\\\"' >> src/gcconfig.pri || die
+
 	sed -e "s:/usr/local/:/usr/:" qwt/qwtconfig.pri.in > qwt/qwtconfig.pri || die
 }
 
