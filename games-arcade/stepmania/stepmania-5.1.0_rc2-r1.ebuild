@@ -1,9 +1,9 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit cmake-utils versionator eutils
+inherit cmake eutils
 
 FFMPEG_VER="2.1.3" # From CMake/SetupFfmpeg.cmake
 REAL_VER="5.1.0-b2"
@@ -49,6 +49,8 @@ RDEPEND="virtual/opengl
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
 
+CMAKE_MAKEFILE_GENERATOR=emake
+
 src_unpack() {
 	default
 	if use ffmpeg; then
@@ -58,7 +60,9 @@ src_unpack() {
 
 src_prepare() {
 	eapply "${FILESDIR}/stepmania-select-audio-backends.patch"
+	eapply "${FILESDIR}/clang.patch"
 	eapply_user
+	cmake_src_prepare
 }
 
 src_configure() {
@@ -90,11 +94,11 @@ src_configure() {
 		-DWITH_PROFILING="NO"
 		-DWITH_PORTABLE_TOMCRYPT="YES"
 	)
-	cmake-utils_src_configure
+	cmake_src_configure
 }
 
 src_compile() {
-	cmake-utils_src_compile
+	cmake_src_compile
 	if use doc; then
 		cd Docs || die
 		doxygen || die
@@ -102,9 +106,9 @@ src_compile() {
 }
 
 src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
-	mv "${ED}/opt/${PN}-$(get_version_component_range 1-2)" "${ED}/opt/${PN}" || die
+	mv "${ED}/opt/${PN}-$(ver_rs 1-2)" "${ED}/opt/${PN}" || die
 	rm -r "${ED}/opt/${PN}/Docs" || die
 	if ! use default-songs; then
 		rm -r "${ED}/opt/${PN}/Songs/StepMania 5" || die
