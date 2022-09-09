@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake eutils
+inherit cmake eutils desktop
 
 FFMPEG_VER="2.1.3" # From CMake/SetupFfmpeg.cmake
 REAL_VER="5.1.0-b2"
@@ -108,7 +108,7 @@ src_compile() {
 src_install() {
 	cmake_src_install
 
-	mv "${ED}/opt/${PN}-$(ver_rs 1-2)" "${ED}/opt/${PN}" || die
+	mv "${ED}/opt/${PN}-$(ver_cut 1-2)" "${ED}/opt/${PN}" || die
 	rm -r "${ED}/opt/${PN}/Docs" || die
 	if ! use default-songs; then
 		rm -r "${ED}/opt/${PN}/Songs/StepMania 5" || die
